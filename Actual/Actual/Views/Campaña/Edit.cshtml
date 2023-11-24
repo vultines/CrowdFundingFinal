@@ -1,0 +1,147 @@
+﻿@model Actual.Models.Campaña
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Campaña</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data" id="form1" runat="server">
+            <h4 class="bg-grea-3">Editar Campaña</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label>Nombre Campaña</label>
+               @* <label asp-for="NombreCampaña" class="control-label"></label>
+                <input asp-for="NombreCampaña" class="form-control" />
+                <span asp-validation-for="NombreCampaña" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.NombreCampaña, new { @class = "input-text"})
+            </div>
+            <div class="form-group">
+                <label>Descripcion General</label>
+               @* <label asp-for="DescripcionGeneral" class="control-label"></label>
+                <input asp-for="DescripcionGeneral" class="form-control" />
+                <span asp-validation-for="DescripcionGeneral" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.DescripcionGeneral, new { @class = "input-text"})
+            </div>
+
+            <div class="form-group">
+                <label>Fecha Inicio</label>
+                @Html.TextBoxFor(c => c.FechaInicio, new { @class = "input-text"})
+            </div>
+            <div class="form-group">
+                <label>Fecha Cierre</label>
+                @Html.TextBoxFor(c => c.FechaCierre, new { @class = "input-text"})
+            </div>
+
+            <div class="form-group">
+                <label>Objetivos</label>
+               @* <label asp-for="Objetivos" class="control-label"></label>
+                <input asp-for="Objetivos" class="form-control" />
+                <span asp-validation-for="Objetivos" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.Objetivos, new { @class = "input-text"})
+            </div>
+            <div class="form-group">
+                <label>Vision</label>
+               @* <label asp-for="Vision" class="control-label"></label>
+                <input asp-for="Vision" class="form-control" />
+                <span asp-validation-for="Vision" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.Vision, new { @class = "input-text"})
+            </div>
+            <div class="form-group">
+                <label>Riesgos</label>
+                @*<label asp-for="Riesgos" class="control-label"></label>
+                <input asp-for="Riesgos" class="form-control" />
+                <span asp-validation-for="Riesgos" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.Riesgos, new { @class = "input-text"})
+            </div>
+            <div class="form-group">
+                <label>Enlace</label>
+               @* <label asp-for="Enlace" class="control-label"></label>
+                <input asp-for="Enlace" class="form-control" />
+                <span asp-validation-for="Enlace" class="text-danger"></span>*@
+                @Html.TextBoxFor(m => m.Enlace, new { @class = "input-text"})
+            </div>
+          @*  <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaRegistro" class="control-label"></label>
+                <input asp-for="FechaRegistro" class="form-control" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaActualizacion" class="control-label"></label>
+                <input asp-for="FechaActualizacion" class="form-control" />
+                <span asp-validation-for="FechaActualizacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUsuario" class="control-label"></label>
+                <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.IdUsuario"></select>
+                <span asp-validation-for="IdUsuario" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label>Categoria:</label>
+                @*<label asp-for="IdCategoria" class="control-label"></label>*@
+                <select asp-for="IdCategoria" class="form-control" asp-items="ViewBag.IdCategoria"></select>
+               @* <span asp-validation-for="IdCategoria" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label>Categoria Asesoramiento</label>
+                @*<label asp-for="IdCategoriaAsesoramiento" class="control-label"></label>*@
+                <select asp-for="IdCategoriaAsesoramiento" class="form-control" asp-items="ViewBag.IdCategoriaAsesoramiento"></select>
+             @*   <span asp-validation-for="IdCategoriaAsesoramiento" class="text-danger"></span>*@
+            </div>
+
+            <div class="row pad-20">
+                <div class="col-lg-12">
+                    @*                        <div id="myDropZone" class="dropzone dropzone-design">
+                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                    </div>*@
+                    <center>
+                        <div class="col-md-4 col-md-offset-4">
+                            @foreach (var image in Model.Imagens)
+                            {
+                                @* <img src="@Url.Action("GetImage", "Libros", new { id = image.Id })" width="200" height="200" />*@
+                                <img src="data:image;base64,@Convert.ToBase64String(image.Ruta)" alt="@image.Id" height="200" width="200" />
+                                <td>
+                                    @Html.ActionLink("Eliminar", "Delete", "Imagen", new { id = image.Id, idcampaña = image.IdCampaña }, new { @class = "btn btn-danger btn-xs" })
+                                </td>
+                                @*<a asp-controller="Campaña" asp-action="EditarImagen" asp-route-id="@image.Id" class="btn btn-primary">@image.Id</a>*@
+                            }
+                            <div id="image-preview"></div>
+                            <label for="Images">Imágenes:</label>
+                            <input class="form-control" type="file" name="Images" multiple />
+                            <br />
+                        </div>
+
+                        <div class="mb-3">
+                            @*<label for="Images">Imágenes:</label>*@
+                            @*<input class="form-control" type="file" name="Images" multiple />
+                            <br /> *@
+                        </div>
+                    </center>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

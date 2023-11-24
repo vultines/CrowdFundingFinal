@@ -1,0 +1,279 @@
+﻿@{
+    var isLoginPage = Context.Request.Path.Equals("/Account/Create", StringComparison.OrdinalIgnoreCase);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - vistas_funcionales</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/vistas_funcionales.styles.css" asp-append-version="true" />
+
+    <style>
+
+        .footer1{
+            position: static;
+            height:100%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 2rem;
+            background-color: #252525ff;
+            color: #b9b9b9;
+            text-align: center;
+        }
+
+        .mainBod4 {
+            max-width: 100%;
+            min-height:170px;
+            margin: 0 auto;
+            align-items: center;
+            background-color: #252525ff;
+        }
+
+        .banner2 {
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .cards2 {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color:none;
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+            text-align:center;
+            height:100%;
+        }
+        .card_content2 {
+            padding: 0;
+            height:auto;
+            background: none;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-color: none;
+        }
+
+        .card_titleCont1 {
+            width: auto;
+            color: #e8e8e8;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 0px;
+            margin-bottom: 8px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            align-self: center;
+            font-weight: bolder;
+            background-color: none;
+        }
+
+        .card_text1 {
+            color: #b9b9b9;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align:center;
+            margin-bottom: 1.25rem;
+            background-color: none;
+        }
+
+        .cards_item3 {
+            max-width: 350px;
+            max-height: 130px;
+            margin-left: 10px;
+            padding: 1rem;
+            background-color: none;
+            border-radius: 100px;
+            color: #fff;
+            text-align: center;
+            margin-bottom:25px;
+        }
+
+        @@media (min-width: 40rem) {
+            .cards_item3 {
+                width: 50%;
+            }
+        }
+
+        @@media (min-width: 56rem) {
+            .cards_item3 {
+                width: 33.3333%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header style="background-color:#F8F9FAff">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+                <div class="container-fluid">
+                    <img src="~/img/logos/univallelg.png"
+                     style="width:35px; height:35px; align-self:center; margin-left:16px; margin-right:10px;" />
+                    <a class="navbar-brand" style="font-family:'Century Gothic', sans-serif; font-size:18px; color:#333; font-weight:bolder;" asp-area="" asp-controller="Home" asp-action="Index">CrowdFunding</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1" style="text-align:center; margin-left:13px;">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo de Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="PreguntasFrecuentes">Preguntas Frecuentes</a>
+                            </li>
+                           
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("1") || User.IsInRole("2"))
+                                {
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Edit">Mi Perfil</a></li>
+
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="LogOut">Cerrar Sesion</a></li>
+                                }
+
+                                @if (User.IsInRole("1"))
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Campaña" asp-action="Index">Mis Campañas</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Campaña" asp-action="Create">Subir Campaña</a></li>
+                                    
+                                }
+
+                                @if (User.IsInRole("2"))
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Reporte" asp-action="Index">Reporte</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="DashboardA" asp-action="Index">Bandeja</a></li>
+                                }
+
+                            }
+
+                        
+                        </ul>
+                        <ul>
+                        
+
+
+                            @{
+                                var imagenBase64 = string.Empty;
+                                if (Context.Session.TryGetValue("UserImage", out byte[] imagen) && imagen != null)
+                                {
+                                    imagenBase64 = Convert.ToBase64String(imagen);
+                                }
+                            }
+
+                            @if (!string.IsNullOrEmpty(imagenBase64))
+                            {
+                                <img style="margin-left:-50px; margin-right:10px; float:left; width:50px; height:50px; border-radius:30px;" src="data:image/jpeg;base64,@imagenBase64" alt="avatar" width="100" height="100" />
+                            }
+
+                        
+                        <a class="nav-link"
+                           style="background-color:#9D0044ff; border-radius:8px;
+                                   padding:9px; width:180px; height:auto; color:#fff; margin-top:8px;
+                                   font-family:'Century Gothic', sans-serif; font-size:17px; text-align:center; align-self:end;"
+                           asp-area="" asp-controller="Account" asp-action="Create">Iniciar Sesión</a>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    @RenderBody()
+
+     @if (!isLoginPage)
+    {
+        <div class="footer1">
+            <div class="mainBod4">
+                <div class="banner2">
+                    
+                    <ul class="cards2">
+
+                        <li class="cards_item3">
+                            <div class="card_content2">
+                                <h2 class="card_titleCont1">
+                                    Nuestra Sección
+                                </h2>
+                                <p class="card_text1">
+                                    Sobre Nosotros
+                                </p>
+                                <p class="card_text1">
+                                    Nuestros Servicios
+                                </p>
+                                
+                                <p class="card_text1">
+                                    Programas Afiliados
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="cards_item3">
+                            <div class="card_content2">
+                                <h2 class="card_titleCont1">
+                                    Te Ayudamos
+                                </h2>
+                                <p class="card_text1">
+                                    Preguntas Y Respuestas
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="cards_item3">
+                            <div class="card_content2">
+                                <h2 class="card_titleCont1">
+                                    Visita Tambien
+                                </h2>
+                                <p class="card_text1">
+                                    Univalle Oficial
+                                </p>
+                                <p class="card_text1">
+                                    Incuva Lab
+                                </p>
+                                <p class="card_text1">
+                                    Mas sobre Incuva Lab
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="cards_item3">
+                            <div class="card_content2">
+                                <h2 class="card_titleCont1">
+                                    Siguenos En Nuestras Redes
+                                </h2>
+                                <p class="card_text1">
+                                    Solicita apoyo.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

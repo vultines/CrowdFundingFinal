@@ -1,0 +1,197 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Actual
+build_property.RootNamespace = Actual
+build_property.ProjectDir = C:\Users\saral\Documents\PS3\RepoCF\Actual\Actual\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\saral\Documents\PS3\RepoCF\Actual\Actual
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Account/VerPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJQZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/AdminUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Campaña/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcGHDsWFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Campaña/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcGHDsWFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Campaña/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcGHDsWFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Campaña/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcGHDsWFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Campaña/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcGHDsWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Catalogo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Catalogo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/CategoriaAsesoramientoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhQXNlc29yYW1pZW50b2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/CategoriaAsesoramientoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhQXNlc29yYW1pZW50b2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/CategoriaAsesoramientoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhQXNlc29yYW1pZW50b2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/CategoriaAsesoramientoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhQXNlc29yYW1pZW50b2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/CategoriaAsesoramientoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhQXNlc29yYW1pZW50b2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Categoriums/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcml1bXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Categoriums/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcml1bXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Categoriums/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcml1bXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Categoriums/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcml1bXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Categoriums/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcml1bXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/DashboardA/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkQVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/Contactar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/ListaProyectos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YVByb3llY3Rvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/PreguntasFrecuentes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmVndW50YXNGcmVjdWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Imagens/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Imagens/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Imagens/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Imagens/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Imagens/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/PendingPr/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuZGluZ1ByXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Reporte/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Shared/_MiCuenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NaUN1ZW50YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saral/Documents/PS3/RepoCF/Actual/Actual/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-go7bx5l7be

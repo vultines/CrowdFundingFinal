@@ -1,0 +1,256 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Mi Perfil";
+    //Layout = "~/Views/Shared/_MiCuenta.cshtml";
+}
+<head>
+    <style>
+
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            text-align: center;
+            color: #4f4f4f
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        .btn {
+            color: #ffffff;
+            margin-bottom: 4px;
+            padding: 0.8rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            font-weight: 400;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+        }
+
+            .btn:hover {
+                background-color: rgba(255, 255, 255, 0.12);
+            }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards_item {
+            display: flex;
+            padding: 1rem;
+        }
+
+        @@media (min-width: 40rem) {
+            .cards_item {
+                width: 50%;
+            }
+        }
+
+        @@media (min-width: 56rem) {
+            .cards_item {
+                width: 33.3333%;
+            }
+        }
+
+        .card {
+            background: linear-gradient(to bottom left, #FDF9F0ff 40%, #FFF 100%);
+            border-radius: 7px;
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card_content {
+            padding: 1rem;
+            background: linear-gradient(to bottom left, #FDF9F0ff 40%, #FFF 100%);
+        }
+
+        .card_title {
+            color: #9D0044ff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 0px;
+            margin-bottom: 8px;
+        }
+
+        .card_text {
+            color: #4f4f4f;
+            font-size: 0.890rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+
+        .made_by {
+            font-weight: 400;
+            font-size: 13px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .approve-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .reject-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="dashboard-message contact-2 bdr clearfix">
+    <div class="main" style="padding:40px;">
+            <h1 style="text-align:left; margin-left:0px; margin-bottom:30px;">Editar Perfil</h1>
+            @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return validarNombreApellido()" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+            <div class="col-lg-3 col-md-3">
+                <!-- Edit profile photo -->
+                <div class="edit-profile-photo">
+                    
+
+                    @{
+                        var imagenBase64 = string.Empty;
+                        if (Context.Session.TryGetValue("UserImage", out byte[] imagen) && imagen != null)
+                        {
+                            imagenBase64 = Convert.ToBase64String(imagen);
+                        }
+                    }
+
+                    @if (!string.IsNullOrEmpty(imagenBase64))
+                    {
+                        <div class="user-author">
+                            <img src="data:image/jpeg;base64,@imagenBase64" alt="avatar" class="img-fluid" />
+                        </div>
+
+                    }
+
+
+                    <h6>Foto de Perfil</h6>
+                    <img src="~/img/avatar/imagenDF.png" id="preview" alt="Imagen de Perfil" width="150" height="150" />
+                    <input type="file" name="Ruta" class="form-control" onchange="previewFile()" />
+
+                    <script>
+                        const preview = document.querySelector('#preview');
+
+                        function previewFile() {
+                            const file = document.querySelector('input[type=file]').files[0];
+                            const reader = new FileReader();
+
+                            reader.addEventListener("load", function () {
+                                preview.src = reader.result;
+                            }, false);
+
+                            if (file) {
+                                reader.readAsDataURL(file);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                @* <form action="#" method="GET" enctype="multipart/form-data">*@
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group name">
+                            <label>Nombre</label>
+                            @*
+                        <input type="text" name="name" class="form-control" placeholder="Maria Alejandra">*@
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", style = "color:black"  } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                            <span id="nombreError" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group email">
+                            <label>Apellido</label>
+                            @*<input type="text" name="title" class="form-control" placeholder="Soliz">*@
+                            @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", style = "color:black"  } })
+                            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                            <span id="apellidoError" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group subject">
+                            <label>Celular</label>
+                            @*<input type="text" name="phone" class="form-control" placeholder="63996426">*@
+                            @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control", style = "color:black"  } })
+                            @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+                            <span id="celularError" class="text-danger"></span>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group message mb-2">
+                                <input type="submit" value="Guardar cambios" class="btn btn-primary" style="background-color:#9D0044ff; border-radius:8px;
+                                   padding:9px; width:180px; height:auto; color:#fff; margin-top:8px;
+                                   font-family:'Century Gothic', sans-serif; font-size:17px; text-align:center;" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group message mb-0">
+                                <a href="@Url.Action("ChangePassword", "Account")" class="btn btn-primary" style="background-color:#9D0044ff; border-radius:8px;
+                                   padding:9px; width:180px; height:auto; color:#fff; margin-top:8px;
+                                   font-family:'Century Gothic', sans-serif; font-size:17px; text-align:center;">Cambiar contraseña</a>
+                        </div>
+                    </div>
+
+                </div>
+                @*                </form>*@
+
+            </div>
+        }
+    </div>
+
+</body>

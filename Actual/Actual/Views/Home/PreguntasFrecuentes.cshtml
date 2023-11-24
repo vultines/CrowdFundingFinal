@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "PreguntasFrecuentes";
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="wwwroot/css/site.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preguntas Frecuentes</title>
+    <style>
+
+        .main{
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            text-align: center;
+            color:#4f4f4f
+        }
+
+        img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            vertical-align: middle;
+        }
+
+        .btn {
+          color: #ffffff;
+          padding: 0.8rem;
+          font-size: 14px;
+          text-transform: uppercase;
+          border-radius: 4px;
+          font-weight: 400;
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: transparent;
+        }
+
+        .btn:hover {
+          background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .cards {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .cards_item {
+          display: flex;
+          padding: 1rem;
+        }
+
+        @@media (min-width: 40rem) {
+          .cards_item {
+            width: 50%;
+          }
+        }
+
+        @@media (min-width: 56rem) {
+          .cards_item {
+            width: 33.3333%;
+          }
+        }
+
+        .card {
+                background: linear-gradient(to bottom left, #fff 40%, #FFF 100%);
+          border-radius: 7px;
+          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        .card_content {
+          padding: 1rem;
+                background: linear-gradient(to bottom left, #fff 40%, #FFF 100%);
+        }
+
+        .card_title {
+          color: #9D0044ff;
+          font-size: 1.2rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: capitalize;
+          margin: 0px;
+          margin-bottom:8px;
+        }
+
+        .card_text {
+          color: #4f4f4f;
+          font-size: 0.890rem;
+          line-height: 1.5;
+          margin-bottom: 1.25rem;    
+          font-weight: 400;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 style="text-align:left; margin-left:10px;">Preguntas más Frecuentes</h1>
+        <ul class="cards">
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq1.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿En qué consiste esta página?</h2>
+                        <p class="card_text">
+                            Es una página web de Univalle que tiene la finalidad actualmente de apoyar proyectos pequeños economicamente. Estos proyectos pueden ser desde inventos, hasta empredimientos empresariales.<p>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq5.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿Cómo puedo ayudar?</h2>
+                        <p class="card_text">
+                            Para ayudar a los proyectos actuales que se encuantran en la página, puede seleccionar el proyecto que guste y encontrará un sección de donación que le llevara al contacto del encargado.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq3.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿Es seguro?</h2>
+                        <p class="card_text">
+                            El manejo de esta página es controlado totalmente por el equipo de CrowdFunding que está encargado y con contacto directo con la gente encargadab de los dintintos proyectos y campañas.
+                        </p>
+                       
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq2.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿Qué sucede si un proyecto llega a su meta?</h2>
+                        <p class="card_text">
+                            Cuando un proyecto llega a su meta, significa que se logrará hacer realidad una brillante idea en la página, pero aún así, se puede seguir donando al o a los respectivos creadores de la campaña o propuesta.
+                        </p>
+
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq4.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿Puedo participar con mis ideas?</h2>
+                        <p class="card_text">
+                            Si se logra mucho apoyo en esta propuesta, esto estaría planteado para una siguiente versión de la página donde cada persona pueda publicar su idea en esra página y ser apoyado po muchas personas para lograr mostrarle al mundo su proyecto.
+                        </p>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="~/img/prefabimgs/faq6.jpg"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">¿Qué más puedo esperar?</h2>
+                        <p class="card_text">La página trendrá muchas actualizaciones con el tiempo que mejorarán la experiencia de los usuarios facilitandole información y añadiéndole muchas más funcionalidades.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+                    

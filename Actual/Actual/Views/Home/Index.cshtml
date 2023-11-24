@@ -1,0 +1,303 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+}
+<head>
+    <style>
+
+        .mainBod {
+            max-width: 100%;
+            margin: 0 auto;
+            padding:30px;
+            align-items:center;
+            background-color: #252525ff;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            text-align: left;
+            color: #E40163ff;
+            font-size:45px;
+        }
+
+        .banner{
+            width:100%;
+            height:auto;
+            justify-content:center;
+            align-items:center;
+            color:#fff;
+            font-size:20px;
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        .imgBanner{
+            width:100%;
+            height:430px;
+            object-fit: fill;
+            vertical-align: middle;
+
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color:none;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .cards_item {
+            padding: 1rem;
+            background-color: none;
+            color: #fff;
+        }
+
+        .card_content {
+            padding: 0;
+            background: none;
+            justify-content:center;
+            text-align:center;
+            align-items: center;
+            background-color: none;
+        }
+
+        .card_titleCont {
+            width:auto;
+            color: #E40163ff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 0px;
+            margin-bottom: 8px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            align-self:center;  
+            background-color: none;
+        }
+
+        .card_text {
+            color: #575757;
+            font-size: 1.40rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            font-weight: bolder;
+            background-color:none;
+        }
+
+        .cards_item2 {
+            max-width:300px;
+            max-height:130px;
+            margin-left:10px;
+            padding: 1rem;
+            background-color: none;
+            border-radius:100px;
+            color:#fff;
+            text-align:center;
+        }
+
+        @@media (min-width: 40rem) {
+            .cards_item {
+                width: 50%;
+            }
+        }
+
+        @@media (min-width: 56rem) {
+            .cards_item {
+                width: 33.3333%;
+            }
+        }
+
+        @@media (min-width: 40rem) {
+            .cards_item2 {
+                width: 50%;
+            }
+        }
+
+        @@media (min-width: 56rem) {
+            .cards_item2 {
+                width: 33.3333%;
+            }
+        }
+
+        .mainBod2{
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .banner2 {
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        
+        .mainBod3 {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainBod">
+        <div class="banner">
+            <ul class="cards">
+                <li class="cards_item">
+                    <h1>Los proyectos emprendedores abren un mundo de posibilidades. 
+                        Generar esta red de apoyo ayuda a potenciarlo.
+                    </h1>
+                    <p >
+                        Deja que el mundo vea y apoye tu trabajo de tus ideas desde cualquier parte.
+                    </p>
+                    <a class="nav-link"
+                       style="background-color:#9D0044ff; border-radius:8px;
+                                   padding:9px; width:180px; height:auto; color:#fff; margin-top:8px;
+                                   font-family:'Century Gothic', sans-serif; font-size:17px; text-align:center; align-self:end;"
+                       asp-area="" asp-controller="Account" asp-action="Create">Iniciar Campaña</a>
+                </li>
+
+                <li class="cards_item">
+                    <img class="imgBanner" src="~/img/prefabimgs/plan1.jpg"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainBod2">
+        <div class="banner2">
+            <h1 style="font-size:25px; 
+                        color:#5c5c5c;text-align:left; 
+                        margin-left:10px; margin-bottom:50px; border-bottom: 1px solid #b9b9b9">
+                        
+                    ¿Qué nos espera?
+            </h1>
+
+            <h1 style="margin-top:16px; margin-bottom:20px;font-size:40px; color:#333;text-align:left; margin-left:10px;">
+                Recaudar fondos en CrowdFunding solo lleva unos minutos.
+            </h1>
+            <ul class="cards">
+                
+                <li class="cards_item2">
+                    <div class="card_content">
+                        <h2 class="card_titleCont">
+                            1
+                        </h2>
+                        <p class="card_text">
+                            Conoce CrowdFunding.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="cards_item2">
+                    <div class="card_content">
+                        <h2 class="card_titleCont">
+                            2
+                        </h2>
+                        <p class="card_text">
+                            Crea tu perfil.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="cards_item2">
+                    <div class="card_content">
+                        <h2 class="card_titleCont">
+                            3
+                        </h2>
+                        <p class="card_text">
+                            Carga tu contenido.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="cards_item2">
+                    <div class="card_content">
+                        <h2 class="card_titleCont">
+                            4
+                        </h2>
+                        <p class="card_text">
+                            Solicita apoyo.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainBod2">
+        <div class="banner2">
+            <h1 style="font-size:25px;
+                        color:#5c5c5c;text-align:left;
+                        margin-left:10px; margin-bottom:50px; border-bottom: 1px solid #b9b9b9">
+
+            </h1>
+
+            <h1 style="margin-top:16px; margin-bottom:20px;font-size:45px; color:#E40163ff;text-align:center; margin-left:10px;">
+                ¿Qué es el CrowdFunding?
+            </h1>
+
+            <h1 style="margin-top:16px; margin-bottom:20px;font-size:25px; color:#575757;text-align:center; margin-left:10px;">
+                El crowdfunding tradicionalmente es una forma de financiación online para obtener el impulso económico a través de donaciones de usuarios, 
+                nuestra plataforma es una versión de donación no monetaria a través de la generación de networking y de mentorías en diferentes áreas que 
+                aporten al crecimiento de los proyectos, donde profesionales aportan desde sus capacidades al proyecto con el que empaticen. 
+                
+            </h1>
+
+            <h1 style="margin-top:16px; margin-bottom:20px;font-size:25px; color:#E40163ff;text-align:center; margin-left:10px;">
+                ¿Estás listo para apoyar al crecimiento?
+            </h1>
+        </div>
+    </div>
+
+    <div class="mainBod2">
+        <div class="banner2">
+            <h1 style="font-size:25px;
+                        color:#5c5c5c;text-align:left;
+                        margin-left:10px; margin-bottom:50px; border-bottom: 1px solid #b9b9b9">
+            </h1>
+
+            <ul class="cards">
+                <li class="cards_item">
+                    <h1 style="margin-top:16px; margin-bottom:20px;font-size:40px; color:#333;text-align:left; margin-left:10px;">
+                        ¿LISTOS PARA EMPEZAR A HACER REALIDAD TU PROYECTO?
+                    </h1>
+                    <h1 style="margin-top:16px; margin-bottom:20px;font-size:30px; color:#575757;text-align:left; margin-left:10px;">
+                        Únete hoy mismo a miles de personas.
+                    </h1>
+                    <a class="nav-link"
+                       style="background-color:#9D0044ff; border-radius:8px;
+                                   padding:9px; width:180px; height:auto; color:#fff; margin-top:8px;
+                                   font-family:'Century Gothic', sans-serif; font-size:17px; text-align:center; align-self:end;"
+                       asp-area="" asp-controller="Account" asp-action="Create">Crear Campaña</a>
+                </li>
+
+                <li class="cards_item">
+                    <img class="imgBanner" src="~/img/prefabimgs/fundraise1.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>

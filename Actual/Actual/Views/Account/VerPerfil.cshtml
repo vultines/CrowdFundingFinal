@@ -1,0 +1,62 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "VerPerfil";
+    //Layout = "~/Views/Shared/_MiCuenta.cshtml";
+}
+
+<h3 class="heading">Perfil de @Model.Nombre</h3>
+<div class="dashboard-message contact-2 bdr clearfix">
+    <div class="row">
+        @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return validarNombreApellido()" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+            <div class="col-lg-3 col-md-3">
+                <!-- Edit profile photo -->
+                <div class="edit-profile-photo">
+                    
+                    @{
+                        var base64 = Convert.ToBase64String(Model.Ruta);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    <img src="@imgSrc" alt="avatar" class="img-fluid" />
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                @* <form action="#" method="GET" enctype="multipart/form-data">*@
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group name">
+                            <label>Nombre</label>
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", style = "color:black", disabled = "disabled" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                            <span id="nombreError" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group email">
+                            <label>Apellido</label>
+                            @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", style = "color:black", disabled = "disabled" } })
+                            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                            <span id="apellidoError" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group subject">
+                            <label>Celular</label>
+                            @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control", style = "color:black", disabled = "disabled" } })
+                            @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+                            <span id="celularError" class="text-danger"></span>
+                        </div>
+                    </div>
+                   
+                </div>
+
+
+
+
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,218 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - BiblioTrueque</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/animate.min.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-submenu.css" asp-append-version="true">
+
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-select.min.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/magnific-popup.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/leaflet.css" type="/text/css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/map.css" type="text/css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome/css/font-awesome.min.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/fonts/flaticon/font/flaticon.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/fonts/linearicons/style.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/jquery.mCustomScrollbar.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/dropzone.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" href="~/css/slick.css" asp-append-version="true">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true">
+        <link rel="stylesheet" type="text/css" id="style_sheet" href="~/skins/default.css" asp-append-version="true">
+
+        <!-- Favicon icon -->
+        <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon" asp-append-version="true">
+
+        <!-- Google fonts -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,300,700">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link rel="stylesheet" type="text/css" href="~/css/ie10-viewport-bug-workaround.css" asp-append-version="true">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script  src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="~/js/ie-emulation-modes-warning.js" asp-append-version="true"></script>	
+	
+        <link rel="stylesheet" href="~/styles.css" asp-append-version="true" />
+    </head>
+<body>
+    <div class="page_loader"></div>
+    <!-- Main header start -->
+    <header class="main-header header-2 fixed-header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand logo pad-0" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/logos/black-logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto d-lg-none d-xl-none">
+                      @if (User.IsInRole("2"))
+                      {                     
+                        <li class="nav-item dropdown">
+                            <a asp-area="" asp-controller="Reporte" asp-action="Index" class="nav-link">Reporte</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a asp-area="" asp-controller="Libros" asp-action="LibrosDonados" class="nav-link">Donaciones</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a asp-area="" asp-controller="Categorias" asp-action="Index" class="nav-link">Categorias</a>
+                        </li>
+                      }
+                      @if (User.IsInRole("1"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Notificaciones" asp-action="Notificaciones" class="nav-link">Notificaciones</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Intercambios" asp-action="SolicitudesPendientes" class="nav-link">Solicitudes</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Libros" asp-action="Index" class="nav-link">Mis Libros</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Account" asp-action="Favoritos" class="nav-link">Mis Intereses</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Libros" asp-action="Create" class="nav-link">Subir Libro</a>
+                            </li>
+                        }
+                        <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Account" asp-action="Edit" class="nav-link">Mi Perfil</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Account" asp-action="LogOut" class="nav-link">Cerrar Sesion</a>
+                            </li>
+                        
+                    </ul>
+                    <div class="navbar-buttons ml-auto d-none d-xl-block d-lg-block">
+                        <ul>
+                            <li>
+                                <div class="dropdown btns">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                       @*<img src="~/img/avatar/avatar-1.png" alt="avatar">*@
+                                         @{
+                                            var imagenBase64 = string.Empty;
+                                            if (Context.Session.TryGetValue("UserImage", out byte[] imagen) && imagen != null)
+                                            {
+                                                imagenBase64 = Convert.ToBase64String(imagen);
+                                            }
+                                        }
+
+                                        @if(!string.IsNullOrEmpty(imagenBase64))
+                                        {                                       
+                                                <img src="data:image/jpeg;base64,@imagenBase64" alt="avatar" />                                                    
+                                       }								                  
+                                        Mi Cuenta   
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        @if (User.IsInRole("2"))
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reporte" asp-action="Index">Reporte</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Libros" asp-action="LibrosDonados">Donaciones</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Categorias" asp-action="Index">Categorias</a>
+                                        }
+                                        @if (User.IsInRole("1"))
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Notificaciones" asp-action="Notificaciones">Notificaciones</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Intercambios" asp-action="SolicitudesPendientes">Solicitudes</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Libros" asp-action="Index">Mis Libros</a>
+                                        }
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Edit">Mi Perfil</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="LogOut">Cerrar Sesion</a>
+                                    </div>
+                                </div>
+                            </li>                          
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Main header end -->
+    <!-- Dashbord start -->
+    <div class="dashboard">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-pad">
+                    <div class="dashboard-nav d-none d-xl-block d-lg-block">
+                        <div class="dashboard-inner">
+                            <h4>Principal</h4>
+                            <ul>
+								@if (User.IsInRole("2"))
+                                {
+                                    <li><a asp-area="" asp-controller="Reporte" asp-action="Index"><i class="flaticon-dashboard"></i> Reporte</a></li>
+                                    <li><a asp-area="" asp-controller="Libros" asp-action="LibrosDonados"><i class="flaticon-bill"></i> Donaciones</a></li>
+                                    <li><a asp-area="" asp-controller="Categorias" asp-action="Index"><i class="flaticon-bill"></i> Categorias</a></li>
+                                }     
+                                @if (User.IsInRole("1"))
+                                {
+                                    <li><a asp-area="" asp-controller="Notificaciones" asp-action="Notificaciones"><i class="flaticon-mail"></i> Notificaciones</a></li>
+                                    <li><a asp-area="" asp-controller="Intercambios" asp-action="SolicitudesPendientes"><i class="flaticon-calendar"></i> Solicitudes</a></li>
+                                }
+                            </ul>
+                            @if (User.IsInRole("1"))
+                            {
+                                <h4>Listas</h4>
+                                <ul>
+                                    <li><a asp-area="" asp-controller="Libros" asp-action="Index"><i class="flaticon-bill"></i>Mis Libros</a></li>
+                                    <li><a asp-area="" asp-controller="Account" asp-action="Favoritos"><i class="flaticon-heart"></i>Mis Intereses</a></li>
+                                    <li><a asp-area="" asp-controller="Libros" asp-action="Create"><i class="flaticon-plus"></i>Subir Libro</a></li>
+                                </ul>
+                            }
+                            <h4>Mi Cuenta</h4>
+                            <ul>
+                                <li @*class="active"*@><a asp-area="" asp-controller="Account" asp-action="Edit"><i class="flaticon-user"></i>Mi Perfil</a></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="LogOut"><i class="flaticon-logout"></i>Cerrar Sesion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12 col-sm-12 col-pad">
+                    <div class="content-area5">
+                        <div class="dashboard-content">
+                            @RenderBody()
+                        </div>                     
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+    <!-- Dashbord end -->
+    <script src="~/js/jquery-2.2.0.min.js" asp-append-version="true"></script>
+    <script src="~/js/popper.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap-submenu.js" asp-append-version="true"></script>
+    <script src="~/js/rangeslider.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.mb.YTPlayer.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap-select.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.easing.1.3.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.scrollUp.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js" asp-append-version="true"></script>
+    <script src="~/js/leaflet.js" asp-append-version="true"></script>
+    <script src="~/js/leaflet-providers.js" asp-append-version="true"></script>
+    <script src="~/js/leaflet.markercluster.js" asp-append-version="true"></script>
+    <script src="~/js/dropzone.js" asp-append-version="true"></script>
+    <script src="~/js/slick.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.filterizr.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.countdown.js" asp-append-version="true"></script>
+    <script src="~/js/maps.js" asp-append-version="true"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="~/js/ie10-viewport-bug-workaround.js" asp-append-version="true"></script>
+    <!-- Custom javascript -->
+    <script src="~/js/ie10-viewport-bug-workaround.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
